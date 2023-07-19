@@ -1,0 +1,95 @@
+.fblogo{
+  position: absolute;
+  width: 301.06px;
+  height: 106px;
+  top: 240px;
+  left: 205px
+};
+
+.webInfo{
+  position: relative;
+  width: 500px;
+  font-size: 28px;
+  font-weight: normal;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+};
+
+
+.loginContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f2f5;
+  
+  height: 100vh;
+  
+};
+
+.leftItem{
+  margin-right: 200px;
+}
+
+.rightPart{
+  display: flex;
+  flex-direction: column;
+ 
+ 
+};
+
+.inputs{
+  width: 330px;
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-size: 17px;
+  border: 1px solid #dddfe2;
+  color: #1d2129;
+  height: 22px;
+  margin-bottom: 15px
+    // line-height: 16px;
+  // border: none;
+};
+
+.loginButton{
+  border-radius: 6px;
+  padding: 15px 25px;
+  font-size: 20px;
+  background-color: #1877f2;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 15px
+};
+
+
+.updatePasswordLink{
+  text-align: center;
+  cursor: pointer;
+  color: #1877f2;
+    font-size: 14px;
+    font-weight: 500px;
+    margin-bottom: 15px;
+    position: relative;
+};
+
+.accountButton{
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  padding: 16px 16px;
+  background-color: #42b72a;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  bottom: 190px;
+  right: 320px;
+
+};
+
+
+.infoCreatePage{
+  position: absolute;
+  bottom: 150px;
+  right: 250px;
+}

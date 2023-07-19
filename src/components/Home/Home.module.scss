@@ -1,0 +1,129 @@
+body{
+  background-color: rgb(243, 241, 241);
+}
+
+
+.Friendshiplogo{
+  width: 30px;
+};
+
+.homeLeftItems{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+};
+
+
+.homeContainer{
+  display: flex;
+    justify-content: space-between;
+};
+
+.centerHomeContainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px
+  
+};
+
+.topHomeContainer{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid #000;
+  background-color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+};
+
+
+.secondCenterHomeContainer{
+  border: 1px solid #000;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  border-radius: 8px;
+}
+
+
+.storiesLink{
+  display: flex;
+  align-items: center;
+ 
+};
+
+.plusIconTopContainer{
+  margin-right: 10px;
+};
+
+.topOfCenterItem{
+  font-weight: bold;
+};
+
+.centralThreeItems{
+  display: flex;
+  flex-direction: row ;
+  // align-items: center;
+  // justify-content: space-between;
+  cursor: pointer;
+};
+
+.accountComment{
+  display: flex;
+  align-items: center;
+};
+
+.commentInput{
+  border-radius: 20px;
+  padding: 10px 280px 10px 10px;
+}
+
+.centralThreeItems div{
+  margin-right: 20px;
+};
+
+.centralThreeIcons{
+  display: flex;
+  // justify-content: space-between
+  align-items: center;
+};
+
+
+.sponsoredWebSite{
+  display: flex;
+  align-items: center;
+};
+
+.sponsoredPhoto{
+width: 50%;
+height: 15vh;
+ border-radius: 8px;
+ margin-right: 20px
+};
+
+.rightHomeContainer{
+  width: 20%;
+  
+  margin-right: 10px
+};
+
+
+.rightFirstSponsored{
+  margin-bottom: 20px;
+};
+
+.createNewGroup{
+  display: flex;
+  align-items: center;
+  margin-top: 10px
+};
+
+.createIcon{
+  margin-right: 10px;
+};
+
+
+.button{
+  background-color: var (--button-bg-color);
+}
+
