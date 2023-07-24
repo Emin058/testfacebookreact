@@ -2,7 +2,7 @@
 
 const initialState={
   isUserAuth:false,
-  accountData:null
+  accountData: null
 };
 
 
@@ -33,4 +33,3 @@ case "CHANGE_ACCOUNT_DATA"  :{
 export default auth;
 
 
-  

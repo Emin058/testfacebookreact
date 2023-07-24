@@ -1,5 +1,6 @@
 import axios from "axios"
 import {USER_AUTH_CHANGED} from "../types";
+import {setAccountData} from "./auth";
 
 
 export const loginUser =(params)=>async(dispatch)=>{
@@ -11,9 +12,14 @@ export const loginUser =(params)=>async(dispatch)=>{
   dispatch(authUser(true ))
 
  }
- 
-  
- 
+}
+
+export const getUser = () => async (dispatch) => {
+    const {data}=await axios.get( 'https://fakestoreapi.com/users/1');
+
+    if(data){
+        dispatch(setAccountData(data))
+    }
 }
 
 export const authUser = (payload) => {

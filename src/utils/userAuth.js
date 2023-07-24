@@ -4,6 +4,5 @@ export const auth=()=>{
 const hasToken=localStorage.getItem("token")
 if (hasToken){
   store.dispatch(authUser(true ))
-
 }
 }

@@ -15,9 +15,11 @@ import NotificationLogo from "../../assets/icons/notification.svg";
 import AccountLogo from "../../assets/icons/account.png";
 import SearchIcon from "../../assets/icons/searchIcon.svg";
 import Home from "../Home/Home";
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {getUser} from "../../redux/actions/user";
 
 const Layout = () => {
+  const dispatch = useDispatch();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const toggleDarkMode = () => {
@@ -56,6 +58,10 @@ const Layout = () => {
   const changeInput = (e) => {
     const { value } = e.target;
   };
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [])
 
   // const logOut=async()=>{
   //   const response=await axios.post("https://dummyjson.com/auth/login",userData)
@@ -125,9 +131,7 @@ const Layout = () => {
             onClick={handleClickAccount}
           />
         </div>
-        {/* {
-      isAccountVisible ?  <Account/> : null
-     } */}
+        {isAccountVisible ? <Account/> : null}
       </div>
 
       <Outlet />
