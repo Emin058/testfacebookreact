@@ -1,71 +1,77 @@
-.headerContainer{
+.headerContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center ;
+  align-items: center;
   background-color: white;
- 
-};
-
-
-.light{
-  --bg-color:#ffffff;
-  --text-color:#000000;
-};
-
-.dark{
-  --bg-color:#222222;
-  --text-color:#ffffff;
 }
 
+.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
 
-.leftHeaderItems{
+.dark {
+  --bg-color: #222222;
+  --text-color: #ffffff;
+}
+
+.leftHeaderItems {
   display: flex;
-  align-items: center ; 
-};
+  align-items: center;
+}
 
-.layoutLinks{
+.layoutLinks {
   width: 35px;
+}
+
+.centerHeaderLinks {
+  display: flex;
+  align-items: center;
+}
+
+.centerHeaderLinks div {
+  margin-right: 100px;
+  width: 20px;
+}
+
+.accountlogo {
+  width: 40px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.rightHeaderItems {
+  display: flex;
+  align-items: center;
+}
+
+.rightHeaderItems img {
+  margin-right: 20px;
+  width: 30px;
+}
+
+.facebookHeaderLogo{
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.input {
+  border-radius: 50px;
+  font-size: 15px;
+  padding: 10px 40px;
+  background-color: rgb(236, 232, 232);
+  position: relative;
+  
+ 
   
 }
 
-
-.centerHeaderLinks {
-display: flex;
-align-items: center;
-
-};
-
-.centerHeaderLinks div{
-margin-right: 100px;
-width: 20px;
-
-}
-
-.rightHeaderItems{
-  display: flex;
-  align-items: center;
- 
-}
-
-.rightHeaderItems img{
-  margin-right: 20px;
-  width: 30px;
-};
-
-.input{
-  border-radius: 50px;
-font-size: 15px;
-  padding: 10px 40px;
-  background-color: rgba(220, 217, 217, 0.986);
-  position: relative;
-};
-
-.searchicon{
+.searchicon {
   position: absolute;
-  top:12px;
-  left:55px;
+  top: 12px;
+  left: 70px;
   width: 30px;
-};
+}
 
 .switch {
   position: relative;
@@ -87,8 +93,8 @@ font-size: 15px;
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 34px;
 }
 .slider:before {
@@ -99,15 +105,15 @@ font-size: 15px;
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);

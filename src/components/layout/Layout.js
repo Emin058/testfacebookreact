@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-
+import Account from "../Account/Account";
 import FbHome from "../../assets/icons/fbHome.svg";
 import FbLogo from "../../assets/icons/fblogo.svg";
 import FaceLittleLogo from "../../assets/icons/fbLittleLogo.svg";
@@ -12,70 +12,69 @@ import GroupsLogo from "../../assets/icons/groups.svg";
 import Menudots from "../../assets/icons/menuDots.svg";
 import Messenger from "../../assets/icons/messenger.svg";
 import NotificationLogo from "../../assets/icons/notification.svg";
-import AccountLogo from "../../assets/icons/accountlogo.svg";
+import AccountLogo from "../../assets/icons/account.png";
 import SearchIcon from "../../assets/icons/searchIcon.svg";
 import Home from "../Home/Home";
+import { useSelector } from "react-redux";
 
 const Layout = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const[isDark,setIsDark]=useState(false)
+  const [isDark, setIsDark] = useState(false);
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
-  
 
+  const [isAccountVisible, setIsAccountVisible] = useState(false);
+  const accountData = useSelector((state) => state.auth.accountData);
 
-  useEffect(()=>{
-    if(isDarkMode){
-      document.body.classList.add("dark")
-    }else{
-      document.body.classList.remove("dark")
-    } 
+  const handleClickAccount = () => {
+    setIsAccountVisible(!isAccountVisible);
+  };
 
-  },[isDarkMode])
-
-  const handleChangeInput=(e)=>{
-const isCheckhed=e.target.checked;
-
-setIsDark(isCheckhed)
-  }
-
-
-  useEffect(()=>{
-if (isDark){
-  document.body.classList.add("dark")
-}else{
-  
-  document.body.classList.remove("dark")
-
-}
-  },[isDark])
-
-
-  const changeInput=(e)=>{
-    const{value}=e.target;
-    
-  }
-  
-
-  const logOut=async()=>{
-    const response=await axios.post("https://dummyjson.com/auth/login",userData)
-    if(response){
-      dispatch(setUserAuth(true))
-      dispatch(setAccountData(response.data))
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
     }
-  
+  }, [isDarkMode]);
+
+  const handleChangeInput = (e) => {
+    const isCheckhed = e.target.checked;
+
+    setIsDark(isCheckhed);
+  };
+
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
     }
-  
-  
-  return (  
+  }, [isDark]);
+
+  const changeInput = (e) => {
+    const { value } = e.target;
+  };
+
+  // const logOut=async()=>{
+  //   const response=await axios.post("https://dummyjson.com/auth/login",userData)
+  //   if(response){
+  //     dispatch(setUserAuth(true))
+  //     dispatch(setAccountData(response.data))
+  //   }
+
+  //   }
+
+  return (
     <div>
       <div className={styles.headerContainer}>
         <div className={styles.leftHeaderItems}>
           <Link to="/">
-            <img src={FaceLittleLogo} />
+            <img className={styles.facebookHeaderLogo} src={FaceLittleLogo} />
           </Link>
-          <input onChange={changeInput}
+          <input
+            onChange={changeInput}
             className={styles.input}
             type="text"
             placeholder="Search Facebook"
@@ -109,20 +108,30 @@ if (isDark){
             </Link>
           </div>
         </div>
-        <button onClick={toggleDarkMode}>{isDarkMode ? 'Light' :'Dark' }</button>
+        <button onClick={toggleDarkMode}>
+          {isDarkMode ? "Light" : "Dark"}
+        </button>
         <label className={styles.switch}>
-        <input type="checkbox"  onChange={handleChangeInput} value={isDark} />
-        <div className={styles.slider}></div>
-      </label>
+          <input type="checkbox" onChange={handleChangeInput} value={isDark} />
+          <div className={styles.slider}></div>
+        </label>
         <div className={styles.rightHeaderItems}>
           <img src={Menudots} />
           <img src={Messenger} />
           <img src={NotificationLogo} />
-          <img onClick={logOut} src={AccountLogo} />
+          <img
+            className={styles.accountlogo}
+            src={AccountLogo}
+            onClick={handleClickAccount}
+          />
         </div>
+        {/* {
+      isAccountVisible ?  <Account/> : null
+     } */}
       </div>
+
       <Outlet />
-    </div >
+    </div>
   );
 };
 
