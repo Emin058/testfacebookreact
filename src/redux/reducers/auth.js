@@ -1,7 +1,6 @@
 
 
 const initialState={
-  isUserAuth:false,
   accountData: null
 };
 

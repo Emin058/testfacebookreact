@@ -7,7 +7,7 @@ export const loginUser =(params)=>async(dispatch)=>{
  const {data}=await axios.post( "https://dummyjson.com/auth/login",params);
 
  if(data){
-  localStorage.setItem("token",data.token)
+  localStorage.setItem("token", JSON.stringify(data.token))
 
   dispatch(authUser(true ))
 

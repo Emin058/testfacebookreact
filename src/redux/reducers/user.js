@@ -33,7 +33,6 @@ import {USER_AUTH_CHANGED} from "../types";
 
 
 const initialState={
-  isUserAuth:false,
   userData:null,
   isAuth: false,
 }

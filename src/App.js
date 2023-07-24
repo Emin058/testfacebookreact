@@ -9,7 +9,6 @@ auth()
 function App() {
   const isAuth = useSelector(state => state.user.isAuth);
 
-  
   return !isAuth ? <Login /> : <Router />
 }
 
