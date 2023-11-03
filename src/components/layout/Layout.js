@@ -15,12 +15,30 @@ import NotificationLogo from "../../assets/icons/notification.svg";
 import AccountLogo from "../../assets/icons/account.png";
 import SearchIcon from "../../assets/icons/searchIcon.svg";
 import Home from "../Home/Home";
-import {useDispatch, useSelector} from "react-redux";
-import {getUser} from "../../redux/actions/user";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../../redux/actions/user";
+import axios from "axios";
+import Products from "../Products/Products";
+
 
 const Layout = () => {
+
+  const [products,setProducts]=useState([]);
+  const [product,setProduct]=useState(null);
+  const [loading,setLoading]=useState(false)
+  
+
+  const getProducts = async () => {
+    setLoading(true);
+
+    const response = await axios.get("https://fakestoreapi.com/products");
+
+    setProducts(response.data);
+    setLoading(false);
+  };
+  
   const dispatch = useDispatch();
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isDark, setIsDark] = useState(false);
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -61,7 +79,7 @@ const Layout = () => {
 
   useEffect(() => {
     dispatch(getUser());
-  }, [])
+  }, []);
 
   // const logOut=async()=>{
   //   const response=await axios.post("https://dummyjson.com/auth/login",userData)
@@ -85,7 +103,12 @@ const Layout = () => {
             type="text"
             placeholder="Search Facebook"
           />
-          <img className={styles.searchicon} src={SearchIcon} />
+          <img
+            onClick={getProducts}
+            className={styles.searchicon} 
+            src={SearchIcon}
+          /><Link to="/products">Products</Link>
+         
         </div>
         <div className={styles.centerHeaderLinks}>
           <div>
@@ -114,13 +137,13 @@ const Layout = () => {
             </Link>
           </div>
         </div>
-        <button onClick={toggleDarkMode}>
-          {isDarkMode ? "Light" : "Dark"}
-        </button>
-        <label className={styles.switch}>
+        {/* <button onClick={toggleDarkMode} >
+          {isDarkMode ?  "Light" : "Dark"}
+        </button> */}
+        {/* <label className={styles.switch}>
           <input type="checkbox" onChange={handleChangeInput} value={isDark} />
           <div className={styles.slider}></div>
-        </label>
+        </label> */}
         <div className={styles.rightHeaderItems}>
           <img src={Menudots} />
           <img src={Messenger} />
@@ -131,7 +154,7 @@ const Layout = () => {
             onClick={handleClickAccount}
           />
         </div>
-        {isAccountVisible ? <Account/> : null}
+        {isAccountVisible ? <Account /> : null}
       </div>
 
       <Outlet />

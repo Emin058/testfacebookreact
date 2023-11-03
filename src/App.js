@@ -3,7 +3,9 @@ import Login from "./components/Login/Login";
 import Router from "./components/router/Router";
 import { auth } from "./utils/userAuth";
 
-auth()
+// auth()
+
+
 
 
 function App() {
@@ -11,5 +13,7 @@ function App() {
 
   return !isAuth ? <Login /> : <Router />
 }
+
+
 
 export default App;

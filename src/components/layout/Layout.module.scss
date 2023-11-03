@@ -5,15 +5,16 @@
   background-color: white;
 }
 
-.light {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-}
+// .light {
+//   --bg-color: #ffffff;
+//   --text-color: #000000;
+// }
 
-.dark {
-  --bg-color: #222222;
-  --text-color: #ffffff;
-}
+// .dark {
+  
+//   background-color: #000000;
+//   --text-color: #ffffff;
+// }
 
 .leftHeaderItems {
   display: flex;
@@ -38,6 +39,7 @@
   width: 40px;
   height: 30px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .rightHeaderItems {

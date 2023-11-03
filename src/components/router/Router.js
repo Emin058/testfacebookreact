@@ -14,6 +14,8 @@ import Feeds from "../Feeds/Feeds";
 import Events from "../Events/Events";
 import LiveVideo from "../LiveVideo/LiveVideo"
 import Login from "../Login/Login";
+import Products from "../Products/Products";
+import Registration from "../Registration/Registration";
 
 const Router = () => {
   return (
@@ -21,6 +23,8 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
+             <Route path="register" element={<Registration />} />
+            <Route path="products" element={<Products />}/>
             <Route index element={<Home />} />
             <Route path="friends" element={<Friends />} />
             <Route path="watch" element={<Watch />} />
@@ -36,6 +40,7 @@ const Router = () => {
             <Route path="events" element={<Events />} />
             <Route path="create/stories" element={<CreateStories />} />
             <Route path="live" element={<LiveVideo />} />
+           
           </Route>
         </Routes>
       </BrowserRouter>

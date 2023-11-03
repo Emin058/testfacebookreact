@@ -4,6 +4,9 @@ import styles from "./Login.module.scss";
 import { useDispatch } from "react-redux";
 
 import { loginUser } from "../../redux/actions/user";
+import { Link } from "react-router-dom";
+import Registration from "../Registration/Registration";
+
 const Login = () => {
   const dispatch = useDispatch();
 
@@ -31,6 +34,8 @@ const Login = () => {
   const onLoginUser = () => {
     dispatch(loginUser(userData));
   };
+
+ 
 
   return (
     <div className={styles.loginContainer}>
@@ -62,7 +67,13 @@ const Login = () => {
         </div>
         <div className={styles.updatePasswordLink}>Forgot password?</div>
         <hr />
-        <button className={styles.accountButton}>Create new account</button>
+        
+          <button  className={styles.accountButton}>
+            Create new account
+          </button>
+      
+
+
         <div className={styles.infoCreatePage}>
           <span style={{ fontWeight: "bold", cursor: "pointer" }}>
             Create a Page

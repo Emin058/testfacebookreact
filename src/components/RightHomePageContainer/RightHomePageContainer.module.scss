@@ -1,0 +1,43 @@
+.rightHomeContainer{
+  width: 20%;
+  
+  margin-right: 10px
+};
+
+.rightTopSponsored{
+  margin-top: 10px;
+}
+
+
+.rightFirstSponsored{
+  margin-bottom: 20px;
+  margin-top: 20px;
+};
+
+.rightFirstSponsored :hover{
+  background-color: rgb(213, 208, 208);
+ 
+};
+
+.rightSecondSponsored :hover{
+  background-color: rgb(213, 208, 208);
+}
+
+.createNewGroup{
+  display: flex;
+  align-items: center;
+  margin-top: 10px
+};
+
+.createIcon{
+  margin-right: 10px;
+};
+
+
+.button{
+  background-color: var (--button-bg-color);
+};
+
+.sponsoredPhoto,.sponsoredPhoto{
+  width: 250px; 
+}

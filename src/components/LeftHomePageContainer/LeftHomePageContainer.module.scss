@@ -1,0 +1,39 @@
+@import "../../responsive.scss";
+
+
+.leftItemsLinks{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  @include sm {
+    display: none;
+  }
+}
+
+.Friendshiplogo{
+  width: 30px;
+  margin-right: 10px
+  
+};
+
+.Accountlogo{
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  margin-right: 10px
+};
+
+.friendslogo{
+  width: 40px;
+  height: 36px;
+  
+ 
+}
+
+.homeLeftItems{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 15px
+};
+
